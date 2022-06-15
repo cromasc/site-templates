@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="/static/login.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="login.css" media="screen" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Playfair+Display&family=Fira+Sans+Condensed&family=Roboto+Slab&display=swap" rel="stylesheet">
@@ -57,12 +57,12 @@
                         <h1>Crie uma conta!</h1>
                         <span>Preencha com um nome de usuário bem criativo e uma senha bem forte ;)</span>
                         <input type="text" placeholder="Usuário" />
-                        <input type="password" placeholder="Senha" />
-                        <input type="password" placeholder="Repita sua senha" />
+                        <input type="password" placeholder="Senha" onkeyup="passwordchecker()"/>
+                        <input type="password" placeholder="Repita sua senha" onkeyup="passwordchecker()"/>
                         <div class="pwrq">
-                            <li class="passwordmatch">As senhas coincidem.</li>
-                            <li class="upch">A senha possui caracteres maiúsculos.</li>
-                            <li class="numch">A senha possui caracteres numéricos.</li>
+                            <li class="passwordmatch">As senhas não coincidem.</li>
+                            <li class="upch">A senha não possui caracteres maiúsculos.</li>
+                            <li class="numch">A senha não possui caracteres numéricos.</li>
                         </div>
                         <button>Criar conta</button>
                     </form>
@@ -91,6 +91,6 @@
                     </div>
                 </div>
             </div>
-        <script type="text/javascript", src="/static/login.js"></script>
+        <script type="text/javascript", src="login.js"></script>
     </body>
 </html>

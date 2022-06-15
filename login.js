@@ -61,6 +61,7 @@ options.darkmode.addEventListener('click', () => {
 	html.style.setProperty('--inputFontColor', '#bfbfbf');
 	html.style.setProperty('--buttonMainColor', '#e589ff');
 	html.style.setProperty('--overlayH1Color', '#f1fa8c');
+	html.style.setProperty('--deniedColor', '#f55656');
 })
 
 options.lightmode.addEventListener('click', () => {
@@ -76,6 +77,7 @@ options.lightmode.addEventListener('click', () => {
 	html.style.setProperty('--inputFontColor', '#545454');
 	html.style.setProperty('--buttonMainColor', '#5b446c');
 	html.style.setProperty('--overlayH1Color', '#fff');
+	html.style.setProperty('--deniedColor', '#e83c3c');
 })
 
 document.addEventListener('keypress', (key) => {
@@ -87,32 +89,52 @@ document.addEventListener('keypress', (key) => {
 function passwordchecker() {
 	const checkNumber = /[1-9]/;
 	const checkUpper = /[A-Z]/;
+	const inputs = container.querySelector('form')
+	.querySelectorAll('input[type="password"]');
     const pwrq = {
         passwordmatch: document.querySelector(".passwordmatch"),
         upch: document.querySelector(".upch"),
         numch: document.querySelector(".numch")
     };
-
+	
 	if (inputs[0].value != inputs[1].value) {
 		pwrq.passwordmatch.classList.remove("allowed");
-		pwrq.passwordmatch.classList.add("denied");
-	} else if (inputs[0].value == inputs[1].value) {
+		pwrq.passwordmatch.style.display = "block";
+		setTimeout(() => {
+			pwrq.passwordmatch.classList.add("denied");
+		}, 1);
+	} else if (inputs[0].value == inputs[1].value && inputs[0].value != "") {
 		pwrq.passwordmatch.classList.remove("denied");
 		pwrq.passwordmatch.classList.add("allowed")
+		setTimeout(() => {
+			pwrq.passwordmatch.style.display = "none";
+		}, 170);
 	};
 	if (checkUpper.test(inputs[0].value)) {
 		pwrq.upch.classList.remove("denied");
-		pwrq.upch.classList.add("allowed");
+		pwrq.upch.classList.add("allowed")
+		setTimeout(() => {
+			pwrq.upch.style.display = "none";
+		}, 170);
 	} else {
 		pwrq.upch.classList.remove("allowed");
-		pwrq.upch.classList.add("denied");	
+		pwrq.upch.style.display = "block";
+		setTimeout(() => {
+			pwrq.upch.classList.add("denied");
+		}, 1);
 	};
 	if (checkNumber.test(inputs[0].value)) {
 		pwrq.numch.classList.remove("denied");
-		pwrq.numch.classList.add("allowed");
+		pwrq.numch.classList.add("allowed")
+		setTimeout(() => {
+			pwrq.numch.style.display = "none";
+		}, 170);
 	} else {
 		pwrq.numch.classList.remove("allowed");
-		pwrq.numch.classList.add("denied");
+		pwrq.numch.style.display = "block";
+		setTimeout(() => {
+			pwrq.numch.classList.add("denied");
+		}, 1);
 	};
 };
 

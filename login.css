@@ -16,7 +16,6 @@ html {
 	--overlayH1Color: #fff;
 	--inputFontColor: #545454;
 	--deniedColor: #e83c3c;
-	--allowedColor: #00af3c;
 }
 
 body {
@@ -114,7 +113,7 @@ button.conf {
 	top: 22px;
 	right: 20px;
 	background-color: transparent;
-	background-image: url("/static/settings.svg");
+	background-image: url("settings.svg");
 	background-repeat: no-repeat;
 	width: 50px;
 	aspect-ratio: 1/1;
@@ -218,7 +217,9 @@ input:focus {
 
 .passwordmatch, .upch, .numch {
 	color: inherit;
-	transition: color .17s ease-in-out;
+	transition: all .17s ease-in-out;
+	display: none;
+	opacity: 0;
 }
 
 .container {
@@ -360,8 +361,9 @@ input:focus {
 
 .passwordmatch.denied, .upch.denied, .numch.denied {
 	color: var(--deniedColor);
+	opacity: 1;
 }
 
 .passwordmatch.allowed, .upch.allowed, .numch.allowed {
-	color: var(--allowedColor);
+	opacity: 0;
 }
