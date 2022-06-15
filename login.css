@@ -1,0 +1,367 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	--font: 'Roboto Slab', serif;
+	--bColorL: #f6f5f7;
+	--mainColor: #5b446c;
+	--buttonMainColor: #5b446c;
+	--spanColor: #262835;
+	--overlayBgColor: #5b446c;
+	--formColor: #fff;
+	--inputColor: #eee;
+	--menuFontColor: #fff;
+	--overlayMainColor: #fff;
+	--overlayH1Color: #fff;
+	--inputFontColor: #545454;
+	--deniedColor: #e83c3c;
+	--allowedColor: #00af3c;
+}
+
+body {
+	background-color: var(--bColorL);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: var(--font);
+	height: 100vh;
+	margin: 0px;
+	transition: background-color .2s ease-in-out;
+}
+
+h1 {
+	font-weight: bold;
+	margin: 0;
+	font-size: 3.5rem;
+	transition: all .2s ease-in-out;
+}
+
+.form-container.sign-in-container h1, .form-container.sign-up-container h1 {
+	color: var(--mainColor);
+}
+
+.form-container.sign-up-container h1 {
+	margin-top: auto;
+    font-size: 3.5rem;
+    line-height: 52px;
+    margin-bottom: 20px;
+}
+
+p {
+	font-size: 1rem;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+	transition: all .2s ease-in-out;
+}
+
+span {
+	font-size: 1rem;
+	color: var(--spanColor);
+	transition: all .2s ease-in-out;
+	margin-bottom: 3px;
+}
+
+a {
+	color: var(--spanColor);
+	font-size: 1rem;
+	text-decoration: none;
+	margin: 15px 0;
+	transition: all .2s ease-in-out;
+}
+
+button {
+	border-radius: 20px;
+	border: 1px solid var(--buttonMainColor);
+	background-color: var(--buttonMainColor);
+	color: var(--menuFontColor);
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in, background-color .2s ease-in-out, border .2s ease-in-out, color .2s ease-in-out;
+    cursor: pointer;
+	font-family: var(--font);
+}
+
+button:active {
+	transform: scale(0.95);
+	transition: transform 80ms ease-in;
+}
+
+button:focus {
+	outline: none;
+}
+
+.form-container.sign-up-container button {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+button.ghost {
+	background-color: var(--overlayMainColor);
+	border-color: var(--overlayMainColor);
+	color: var(--overlayBgColor);
+	transition: all .2s ease-in-out;
+}
+
+button.conf {
+	position: absolute;
+	top: 22px;
+	right: 20px;
+	background-color: transparent;
+	background-image: url("/static/settings.svg");
+	background-repeat: no-repeat;
+	width: 50px;
+	aspect-ratio: 1/1;
+	padding: 0px;
+	border-radius: 0px;
+	border: none;
+	transition: .3s cubic-bezier(0.54, 1.51, 0.02, 1.43);
+}
+
+button.conf:focus{
+	transform: rotate(45deg);
+}
+
+.menu {
+	background-color: transparent;
+	position: absolute;
+	right: 1vh;
+	height: 82vh;
+	width: 70px;
+	align-content: space-around;
+	justify-content: center;
+	display: none;
+}
+
+button#bf1, button#bf2 {
+	background-repeat: no-repeat;
+	width: 50px;
+	font-size: 25px;
+	background-color: var(--mainColor);
+	aspect-ratio: 1/1;
+	padding: 0px;
+	border-radius: 100%;
+	border: none;
+}
+
+button#bf1{
+	font-family: "Merriweather", serif
+} 
+button#bf2{
+	font-family: "Roboto Slab", serif
+}
+
+button#lm, button#dm {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	width: 50px;
+	aspect-ratio: 1/1;
+	padding: 0px;
+	border-radius: 0px;
+	border: none;
+	fill: var(--mainColor);
+}
+
+.sidebuttons {
+	transition: all .3s cubic-bezier(0.38, 0.6, 0, 1.54);
+	transform: scale(0);
+}
+
+.sidebuttons.active:hover {
+	transition: all .2s cubic-bezier(0.38, 0.6, 0, 1.54);
+	transform: scale(1.2);
+}
+
+/* .sidebuttons.active:active {
+	transition: all .1s ease-out;
+	transform: scale(1);
+} */
+
+form {
+	background-color: var(--formColor);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+	transition: background-color .2s ease-in-out;
+}
+
+input {
+	background-color: var(--inputColor);
+	color: var(--inputFontColor);
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+	font-family: var(--font);
+	transition: background-color .2s ease-in-out, color .2s ease-in-out;
+}
+
+input:focus {
+	outline: none;
+}
+
+.pwrq {
+	text-align: left;
+	color: var(--spanColor);
+	font-size: 13px;
+}
+
+.passwordmatch, .upch, .numch {
+	color: inherit;
+	transition: color .17s ease-in-out;
+}
+
+.container {
+	background-color: var(--formColor);
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 768px;
+	max-width: 100%;
+	min-height: 480px;
+}
+
+.container h1 {
+	color: var(--overlayH1Color);
+}
+
+.form-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+.container.right-panel-active .sign-in-container {
+	transform: translateX(100%);
+}
+
+.sign-up-container {
+	left: 0;
+	width: 50%;
+	opacity: 0;
+	z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+	transform: translateX(100%);
+	opacity: 1;
+	z-index: 5;
+	animation: show 0.6s;
+}
+
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+	
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}
+
+.overlay-container {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	transition: transform 0.6s ease-in-out;
+	z-index: 100;
+}
+
+.container.right-panel-active .overlay-container{
+	transform: translateX(-100%);
+}
+
+.overlay {
+	background: #ffffff;
+	background: var(--overlayBgColor);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	color: var(--overlayMainColor);
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+  	transform: translateX(0);
+	transition: transform 0.6s ease-in-out, background .2s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+  	transform: translateX(50%);
+}
+
+.overlay-panel {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+	transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+	transform: translateX(0);
+}
+
+.overlay-right {
+	right: 0;
+	transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+	transform: translateX(20%);
+}
+
+.menu.active-menu {
+	display: grid;
+}
+
+.conf.active {
+	z-index: 9999;
+}
+
+.sidebuttons.active {
+	transform: scale(1);
+}
+
+.passwordmatch.denied, .upch.denied, .numch.denied {
+	color: var(--deniedColor);
+}
+
+.passwordmatch.allowed, .upch.allowed, .numch.allowed {
+	color: var(--allowedColor);
+}
