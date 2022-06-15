@@ -9,8 +9,8 @@ const menu = {
     isActive: false
 }
 const options = {
-    merriweather: document.getElementById('bf1'),
-    roboto: document.getElementById('bf2'),
+    // merriweather: document.getElementById('bf1'),
+    // roboto: document.getElementById('bf2'),
     lightmode: document.getElementById('lm'),
     darkmode: document.getElementById('dm')
 }
@@ -38,15 +38,15 @@ menu.config.addEventListener('click', () => {
         }
 })
     
-options.merriweather.addEventListener('click', () => {
-    html.style.setProperty('--font', "'Merriweather', serif");
-    document.cookie = 'fonte = merriweather';
-})
+// options.merriweather.addEventListener('click', () => {
+//     html.style.setProperty('--font', "'Merriweather', serif");
+//     document.cookie = 'fonte = merriweather';
+// })
 
-options.roboto.addEventListener('click', () => {
-    html.style.setProperty('--font', "'Roboto Slab', serif");
-    document.cookie = 'fonte = roboto';
-})
+// options.roboto.addEventListener('click', () => {
+//     html.style.setProperty('--font', "'Roboto Slab', serif");
+//     document.cookie = 'fonte = roboto';
+// })
 
 options.darkmode.addEventListener('click', () => {
     document.cookie = 'mode = darkmode';

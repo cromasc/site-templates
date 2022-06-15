@@ -1,21 +1,23 @@
+@import url("balloons.css");
+
 * {
 	box-sizing: border-box;
 }
 
-html {
+:root {
 	--font: 'Roboto Slab', serif;
-	--bColorL: #f6f5f7;
-	--mainColor: #5b446c;
-	--buttonMainColor: #5b446c;
-	--spanColor: #262835;
-	--overlayBgColor: #5b446c;
-	--formColor: #fff;
-	--inputColor: #eee;
-	--menuFontColor: #fff;
-	--overlayMainColor: #fff;
-	--overlayH1Color: #fff;
-	--inputFontColor: #545454;
-	--deniedColor: #e83c3c;
+	--bColorL: #262835;
+	--mainColor: #7fd8eb;
+	--spanColor: #89788f;
+	--overlayBgColor: #866bdf;
+	--formColor: #302b44;
+	--inputColor: #514260;
+	--menuFontColor: #262835;
+	--overlayMainColor: #302b44;
+	--inputFontColor: #bfbfbf;
+	--buttonMainColor: #e589ff;
+	--overlayH1Color: #f1fa8c;
+	--deniedColor: #f55656;
 }
 
 body {
@@ -138,7 +140,7 @@ button.conf:focus{
 	display: none;
 }
 
-button#bf1, button#bf2 {
+/* button#bf1, button#bf2 {
 	background-repeat: no-repeat;
 	width: 50px;
 	font-size: 25px;
@@ -154,7 +156,7 @@ button#bf1{
 } 
 button#bf2{
 	font-family: "Roboto Slab", serif
-}
+} */
 
 button#lm, button#dm {
 	background-color: transparent;
@@ -194,12 +196,18 @@ form {
 	transition: background-color .2s ease-in-out;
 }
 
+.input-and-indicator {
+	width: 15rem;
+	margin: 10px 0px 10px 0px;
+	position: relative;
+}
+
 input {
 	background-color: var(--inputColor);
 	color: var(--inputFontColor);
 	border: none;
-	padding: 12px 15px;
-	margin: 8px 0;
+	border-radius: 5px;
+	padding: .7rem;
 	width: 100%;
 	font-family: var(--font);
 	transition: background-color .2s ease-in-out, color .2s ease-in-out;
@@ -209,7 +217,17 @@ input:focus {
 	outline: none;
 }
 
-.pwrq {
+.icon-indicator {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+.fa-solid.fa-xmark::before{
+	content: "\f00d";
+}
+
+/* .pwrq {
 	text-align: left;
 	color: var(--spanColor);
 	font-size: 13px;
@@ -220,6 +238,10 @@ input:focus {
 	transition: all .17s ease-in-out;
 	display: none;
 	opacity: 0;
+} */
+
+.form-container.sign-in-container input {
+	margin: 10px 0px 10px 0px;
 }
 
 .container {
@@ -366,4 +388,25 @@ input:focus {
 
 .passwordmatch.allowed, .upch.allowed, .numch.allowed {
 	opacity: 0;
+}
+
+footer {
+    background-color: #282a36;
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+	color: white;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer a {
+    color: #50fa7b;
+    text-decoration: none;
 }
