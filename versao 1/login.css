@@ -39,10 +39,6 @@ h1 {
 	transition: all .2s ease-in-out;
 }
 
-.form-container.sign-in-container h1, .form-container.sign-up-container h1 {
-	color: var(--mainColor);
-}
-
 .form-container.sign-up-container h1 {
 	margin-top: auto;
     font-size: 3.5rem;
