@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="/static/login.css">
+
+</head>
+<body>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="/register" method="POST">
+			<h1>Cadastro</h1>
+			<input type="text" placeholder="Usuário" name="usuario" />
+			<input type="password" placeholder="Senha" name="password" />
+			<input type="password" placeholder="Senha" name="password2" />
+			<button>Registrar-se</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="/login" method="POST">
+			<h1>Login</h1>
+			<input type="text" placeholder="Usuário" name='usuario'/>
+			<input type="password" placeholder="Senha" name='password'/>
+			<button>Login</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Bem vindo de volta!</h1>
+				<p>Para acessar a nossa plataforma, realize o login com seus dados cadastrados.</p>
+				<button class="ghost" id="signIn">Login</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Olá, Bem vindo!</h1>
+				<p>Se registre agora e tenha acesso a nossa plataforma.</p>
+				<button class="ghost" id="signUp">Registrar-se</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<p>
+		Plataforma desenvolvida por <a href="#">gbpagano</a> e <a href="#">cromasc</a>.
+	</p>
+</footer>
+  <script  src="/static/login.js"></script>
+
+</body>
+</html>
