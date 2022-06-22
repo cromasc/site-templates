@@ -21,7 +21,7 @@ body::-webkit-scrollbar-track {
   border-radius: 40px;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: #b1b866;
+  background-color: #4088b1;
   border-radius: 20px;
 }
 
@@ -37,9 +37,8 @@ nav {
     padding: 10px;
     display: flex;
     align-items: center;
-    background-color: #282a36a2;
+    background-color: #282a3600;
     backdrop-filter: blur(10px);
-    border-bottom: 3px solid #21222c56;
 }
 
 button {
