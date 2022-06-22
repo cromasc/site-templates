@@ -39,7 +39,7 @@ nav {
     align-items: center;
     background-color: #282a36a2;
     backdrop-filter: blur(10px);
-    border-bottom: 4px solid #21222c;
+    border-bottom: 3px solid #21222c56;
 }
 
 button {
