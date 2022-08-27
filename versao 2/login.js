@@ -136,10 +136,10 @@ function passwordchecker() {
 	};
 };
 
-if (document.cookie.split('; ').find(row => row.startsWith('fonte=')) != undefined) {
-    const fonte = document.cookie.split('; ').find(row => row.startsWith('fonte=')).split('=')[1];
-    options[fonte].click();
-}
+// if (document.cookie.split('; ').find(row => row.startsWith('fonte=')) != undefined) {
+//     const fonte = document.cookie.split('; ').find(row => row.startsWith('fonte=')).split('=')[1];
+//     options[fonte].click();
+// }
 if (document.cookie.split('; ').find(row => row.startsWith('mode=')) != undefined) {
     const mode = document.cookie.split('; ').find(row => row.startsWith('mode=')).split('=')[1];
     options[mode].click();
